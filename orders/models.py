@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 class Order(models.Model):
-    gid = models.CharField(max_length=20)
+    gid = models.CharField(max_length=20,primary_key=True)
     gname = models.CharField(max_length=200)
     gpic = models.CharField(max_length=250)
     gdesc = models.CharField(max_length=250)
@@ -17,7 +17,7 @@ class Order(models.Model):
     tag = models.CharField(max_length=120)
     buyable = models.CharField(max_length=20)
     regularBuyMax = models.CharField(max_length=20)
-    property = models.CharField(max_length=20)
+    property = models.CharField(max_length=20)   #modify property to oproperty
     priceBase = models.IntegerField()
     wishSetable = models.CharField(max_length=20)
     buyUnit = models.IntegerField()
@@ -45,7 +45,7 @@ class Order(models.Model):
     ostatus = models.CharField(max_length=20)
     isLimit = models.CharField(max_length=20)
     totalPeriod = models.CharField(max_length=20)
-    period = models.CharField(max_length=20)
+    period = models.CharField(max_length=20,primary_key=True)
     existingTimes = models.CharField(max_length=20)
     calcTime = models.DateTimeField()
     calcTimestamp = models.CharField(max_length=20)

@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+	<meta charset='utf-8'>
+	<title>EChartExample</title>
+	<!-- import echarts.js -->
+	<script src="{% static 'echart/js/echarts.js' %}"></script>
+    </head>
+    <body>
+	<!-- prepare a Dom with width and height -->
+	<div id="example" style="width: 600px;height: 400px;"></div>
+	<div id="example2" style="width: 600px;height: 400px;"></div>
+    <script type="text/javascript">
+	var examplChart = echarts.init(document.getElementById('example'));
+	var examplChart2 = echarts.init(document.getElementById('example2'));
+
+	var option = {
+	    title: {
+		text: 'Echats Example'
+	    },
+	    tooltip:{},
+	    legend: {
+		data:['sales']
+	    },
+	    xAxis: {
+		data: ["Tshirt","Dress","Skirt","P","Heels","Socks"]
+	    },
+	    yAxis: {},
+	    series: [{
+		name: 'sales',
+		type: 'bar',
+		data: [5,20,36,10,10,20]
+	    }]
+	};
+	examplChart.setOption(option);
+	examplChart2.setOption(option);
+    </script>
+    </body>
+</html>
+
